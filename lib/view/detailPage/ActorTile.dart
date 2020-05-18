@@ -10,7 +10,6 @@ import 'package:moviebox/model/Actor.dart';
 class ActorTile extends StatelessWidget {
   Actor _actor;
 
-
   ActorTile(this._actor);
 
   @override
@@ -26,28 +25,34 @@ class ActorTile extends StatelessWidget {
             radius: 35,
           ),
           Padding(
-            padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical*1.33),
-            child: Text(_actor.name,style: TextStyle(
-              color: MyColor.shopTileTxt,
-              fontSize: SizeConfig.blockSizeVertical*1.78,
-              fontFamily: "nova semibold"
-            ),),
+            padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.33),
+            child: Text(
+              _actor.name,
+              style: TextStyle(
+                  color: MyColor.shopTileTxt,
+                  fontSize: SizeConfig.blockSizeVertical * 1.78,
+                  fontFamily: "nova semibold"),
+            ),
           ),
           SizedBox(
-            height:2 ,
+            height: 2,
           ),
-          Text(_actor.surname,style: TextStyle(
-              color: MyColor.shopTileTxt,
-              fontSize: SizeConfig.blockSizeVertical*1.78,
-              fontFamily: "nova semibold"
-          ),),
+          Text(
+            _actor.surname,
+            style: TextStyle(
+                color: MyColor.shopTileTxt,
+                fontSize: SizeConfig.blockSizeVertical * 1.78,
+                fontFamily: "nova semibold"),
+          ),
           Padding(
-            padding: EdgeInsets.only(top:SizeConfig.blockSizeVertical*0.44),
-            child: Text(_actor.character,style: TextStyle(
-                color: MyColor.txtBarDetailSecondRow,
-                fontSize: SizeConfig.blockSizeVertical*1.78,
-                fontFamily: "nova regular"
-            ),),
+            padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 0.44),
+            child: Text(
+              _actor.character,
+              style: TextStyle(
+                  color: MyColor.txtBarDetailSecondRow,
+                  fontSize: SizeConfig.blockSizeVertical * 1.78,
+                  fontFamily: "nova regular"),
+            ),
           )
         ],
       ),

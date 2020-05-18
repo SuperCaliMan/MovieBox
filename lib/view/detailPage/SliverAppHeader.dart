@@ -12,15 +12,13 @@ class SliverAppHeader extends SliverPersistentHeaderDelegate {
   final double expandedHeight;
   final Film _film;
 
-  SliverAppHeader(this._film,{@required this.expandedHeight});
+  SliverAppHeader(this._film, {@required this.expandedHeight});
 
   void _onClickBack(BuildContext context) {
     Navigator.pop(context);
   }
 
   Container _getBar(BuildContext context) {
-
-
     Row _getElementInside() {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,10 +91,10 @@ class SliverAppHeader extends SliverPersistentHeaderDelegate {
                       color: MyColor.green,
                       child: Center(
                           child: Text(
-                            _film.metascore.toString(),
-                            style: TextStyle(
-                                color: Colors.white, fontFamily: "nova regular"),
-                          )),
+                        _film.metascore.toString(),
+                        style: TextStyle(
+                            color: Colors.white, fontFamily: "nova regular"),
+                      )),
                     ),
                   ),
                   Padding(
@@ -139,14 +137,13 @@ class SliverAppHeader extends SliverPersistentHeaderDelegate {
     );
   }
 
-
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Stack(
       children: <Widget>[
         Opacity(
-          opacity: 1-(shrinkOffset/expandedHeight),
+          opacity: 1 - (shrinkOffset / expandedHeight),
           child: ClipRRect(
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50)),
             child: Container(
@@ -159,31 +156,32 @@ class SliverAppHeader extends SliverPersistentHeaderDelegate {
             ),
           ),
         ),
-        Positioned(bottom: -30, child: Opacity(
-          opacity: 1-(shrinkOffset / expandedHeight),
-          child: _getBar(context),
-        )),
         Positioned(
-          left: 16,
-          top: 40,
-          child: Opacity(
-            opacity: 1-(shrinkOffset/expandedHeight),
-            child: InkWell(
-              child: Container(
-                width: 24,
-                height: 24,
-                child: Icon(
-                  Theme.of(context).platform == TargetPlatform.android
-                      ? Icons.arrow_back
-                      : Icons.arrow_back_ios,
-                  color: MyColor.shopTileTxt,
-                  size: 24,
+            bottom: -30,
+            child: Opacity(
+              opacity: 1 - (shrinkOffset / expandedHeight),
+              child: _getBar(context),
+            )),
+        Positioned(
+            left: 16,
+            top: 40,
+            child: Opacity(
+              opacity: 1 - (shrinkOffset / expandedHeight),
+              child: InkWell(
+                child: Container(
+                  width: 24,
+                  height: 24,
+                  child: Icon(
+                    Theme.of(context).platform == TargetPlatform.android
+                        ? Icons.arrow_back
+                        : Icons.arrow_back_ios,
+                    color: MyColor.shopTileTxt,
+                    size: 24,
+                  ),
                 ),
+                onTap: () => _onClickBack(context),
               ),
-              onTap: () => _onClickBack(context),
-            ),
-          )
-        )
+            ))
       ],
       overflow: Overflow.visible,
       alignment: Alignment.bottomRight,

@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(
                 height: SizeConfig.blockSizeVertical*2.5,
               ),
-              CategoryListWidget(CategoryType.values),
+              CategoryListWidget(CategoryType.values,true),
               SizedBox(
                 height: SizeConfig.blockSizeVertical*8,
               ),

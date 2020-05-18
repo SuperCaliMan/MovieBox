@@ -34,7 +34,7 @@ class FilmDetailPage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 32,top: 16),
+            margin: EdgeInsets.only(bottom: 32, top: 16),
             height: 150,
             child: ListView.builder(
               itemBuilder: (contex, position) {
@@ -87,7 +87,7 @@ class FilmDetailPage extends StatelessWidget {
 
   Container _getFilmInfo() {
     return Container(
-      margin: EdgeInsets.only(left: 32,right: 32),
+      margin: EdgeInsets.only(left: 32, right: 32),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -162,17 +162,12 @@ class FilmDetailPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             _getFilmInfo(),
-            CategoryListWidget(_film.listCategory),
+            CategoryListWidget(_film.listCategory, false),
             _getSummary(),
             _getCast(_film.actors),
           ],
-        )
-    );
+        ));
   }
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -180,7 +175,10 @@ class FilmDetailPage extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           SliverPersistentHeader(
-            delegate: SliverAppHeader(_film,expandedHeight: 300,),
+            delegate: SliverAppHeader(
+              _film,
+              expandedHeight: 300,
+            ),
             pinned: true,
           ),
           SliverList(
@@ -195,21 +193,3 @@ class FilmDetailPage extends StatelessWidget {
     );
   }
 }
-
-/*
-CustomScrollView(
-        slivers: [
-          SliverPersistentHeader(
-            delegate: SliverAppHeader(_film,expandedHeight: 300,),
-            pinned: true,
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                _getContent(),
-              ],
-            ),
-          )
-        ],
-      ),
- */

@@ -1,4 +1,4 @@
-enum CategoryType{
+enum CategoryType {
   Action,
   Crime,
   Comedy,

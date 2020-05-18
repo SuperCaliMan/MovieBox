@@ -12,14 +12,17 @@ class ShopTile extends StatelessWidget {
   final bool isSelected;
   final TabCallBack<Shop> dataSelectionCallBack;
 
-  ShopTile({@required this.shop,@required this.isSelected,this.dataSelectionCallBack});
+  ShopTile(
+      {@required this.shop,
+      @required this.isSelected,
+      this.dataSelectionCallBack});
 
-  void _onTap(){
-    if(shop != null) {
+  void _onTap() {
+    if (shop != null) {
       dataSelectionCallBack(this.shop);
     }
 
-    print("Tap: "+shop.title);
+    print("Tap: " + shop.title);
   }
 
   @override
@@ -29,19 +32,20 @@ class ShopTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(shop.title,
+          Text(
+            shop.title,
             style: TextStyle(
-                color: isSelected?MyColor.shopTileTxt:MyColor.shopTileTxt50,
-                fontSize: SizeConfig.blockSizeVertical*3.5,
+                color: isSelected ? MyColor.shopTileTxt : MyColor.shopTileTxt50,
+                fontSize: SizeConfig.blockSizeVertical * 3.5,
                 fontFamily: "nova semibold"),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 16),
             child: ClipRRect(
               child: Container(
-                width: SizeConfig.blockSizeHorizontal*11,
-                height: SizeConfig.blockSizeVertical*0.84,
-                color: isSelected?MyColor.shopTilePink:Colors.transparent,
+                width: SizeConfig.blockSizeHorizontal * 11,
+                height: SizeConfig.blockSizeVertical * 0.84,
+                color: isSelected ? MyColor.shopTilePink : Colors.transparent,
               ),
               borderRadius: BorderRadius.circular(100),
             ),

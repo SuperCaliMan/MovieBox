@@ -13,7 +13,10 @@ class MovieTile extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(50),
       child: Container(
-        child: new Image.network(_filmImage,fit: BoxFit.fill,),
+        child: new Image.network(
+          _filmImage,
+          fit: BoxFit.fill,
+        ),
       ),
     );
   }

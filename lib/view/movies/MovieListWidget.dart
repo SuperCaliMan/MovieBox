@@ -17,22 +17,20 @@ class MovieListWidget extends StatefulWidget {
 
   @override
   State createState() => _MovieListWidget();
-
-
 }
 
-class _MovieListWidget extends State<MovieListWidget>{
+class _MovieListWidget extends State<MovieListWidget> {
   FilmsList _filmsList = new FilmsList();
   Film _selectFilm;
 
-  void _onDataSelect(Film film){
+  void _onDataSelect(Film film) {
     setState(() {
       _selectFilm = film;
     });
   }
 
-  void _onTapFilm(Film film){
-    if(widget.tapFilmCallBack != null){
+  void _onTapFilm(Film film) {
+    if (widget.tapFilmCallBack != null) {
       widget.tapFilmCallBack(film);
     }
   }
@@ -43,33 +41,26 @@ class _MovieListWidget extends State<MovieListWidget>{
       children: <Widget>[
         Swiper(
           layout: SwiperLayout.CUSTOM,
-          onIndexChanged: (i) =>_onDataSelect(_filmsList.getMovie(i)),
+          onIndexChanged: (i) => _onDataSelect(_filmsList.getMovie(i)),
           onTap: (i) => _onTapFilm(_filmsList.getMovie(i)),
-          customLayoutOption: new CustomLayoutOption(
-              startIndex: -1,
-              stateCount: 3
-          ).addRotate([
-            -45.0/180,
-            0.0,
-            45.0/180
-          ]).addTranslate([
-            new Offset(-SizeConfig.blockSizeHorizontal*77, -SizeConfig.blockSizeVertical*0.44),
+          customLayoutOption:
+              new CustomLayoutOption(startIndex: -1, stateCount: 3)
+                  .addRotate([-45.0 / 180, 0.0, 45.0 / 180]).addTranslate([
+            new Offset(-SizeConfig.blockSizeHorizontal * 77,
+                -SizeConfig.blockSizeVertical * 0.44),
             new Offset(0.0, 0.0),
-            new Offset(SizeConfig.blockSizeHorizontal*77, -SizeConfig.blockSizeVertical*0.44)
-          ]).addOpacity([
-            0.2,
-            1,
-            0.2
-          ]),
-          itemWidth: SizeConfig.blockSizeHorizontal*60,//260,
-          itemHeight: SizeConfig.blockSizeVertical*40,//380.0,
+            new Offset(SizeConfig.blockSizeHorizontal * 77,
+                -SizeConfig.blockSizeVertical * 0.44)
+          ]).addOpacity([0.2, 1, 0.2]),
+          itemWidth: SizeConfig.blockSizeHorizontal * 60, //260,
+          itemHeight: SizeConfig.blockSizeVertical * 40, //380.0,
           itemBuilder: (context, index) {
             return MovieTile(_filmsList.getMovie(index).imgUrl);
           },
           itemCount: _filmsList.size(),
         ),
         SizedBox(
-          height: SizeConfig.blockSizeVertical*7,
+          height: SizeConfig.blockSizeVertical * 7,
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -79,8 +70,9 @@ class _MovieListWidget extends State<MovieListWidget>{
               _selectFilm == null
                   ? _filmsList.getMovie(0).title
                   : _selectFilm.title,
-              style:
-              TextStyle(fontSize: SizeConfig.blockSizeVertical*3.5, fontFamily: "nova semibold"),
+              style: TextStyle(
+                  fontSize: SizeConfig.blockSizeVertical * 3.5,
+                  fontFamily: "nova semibold"),
               textAlign: TextAlign.center,
             ),
             Padding(
@@ -94,12 +86,13 @@ class _MovieListWidget extends State<MovieListWidget>{
                     color: MyColor.starYellow,
                   ),
                   SizedBox(
-                    width: SizeConfig.blockSizeHorizontal*3,
+                    width: SizeConfig.blockSizeHorizontal * 3,
                   ),
                   Text(
                     "${_selectFilm == null ? _filmsList.getMovie(0).rate : _selectFilm.rate}",
                     style: TextStyle(
-                        fontSize: SizeConfig.blockSizeVertical*2.5, fontFamily: "nova regular"),
+                        fontSize: SizeConfig.blockSizeVertical * 2.5,
+                        fontFamily: "nova regular"),
                   )
                 ],
               ),

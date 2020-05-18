@@ -1,5 +1,3 @@
-
-
 /**
  * Generic callback to detect tap
  */
