@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 /// @Author: Alberto Caliman
-/// @Scope: set application color
+/// @Scope: set application colors
 class MyColor {
   static final Color categoryTileBorder = Color(0x2612153D);
   static final Color categoryTileTxt = Color(0xff434670);

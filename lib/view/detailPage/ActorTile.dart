@@ -5,7 +5,7 @@ import 'package:moviebox/SizeConfig.dart';
 import 'package:moviebox/model/Actor.dart';
 
 ///@Author: Alberto Caliman
-///@Scope: tile widget for actor tile list
+///@Scope: tile widget to actor tile list
 
 class ActorTile extends StatelessWidget {
   Actor _actor;
