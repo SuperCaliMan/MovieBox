@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../MyColor.dart';
 import '../../SizeConfig.dart';
-import '../../model/Film.dart';
+import '../../model/Movie.dart';
 
 ///@Author: Alberto Caliman
 ///@scope: custom header for detail page

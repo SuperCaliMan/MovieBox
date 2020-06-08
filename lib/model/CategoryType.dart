@@ -5,4 +5,5 @@ enum CategoryType {
   Drama,
   Sport,
   Biography,
+  Adventure
 }

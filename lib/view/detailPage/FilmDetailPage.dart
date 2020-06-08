@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:moviebox/MyColor.dart';
 import 'package:moviebox/SizeConfig.dart';
 import 'package:moviebox/model/Actor.dart';
-import 'package:moviebox/model/Film.dart';
+import 'package:moviebox/model/Movie.dart';
 import 'package:moviebox/view/categoryList/CategoryListWidget.dart';
 import 'package:moviebox/view/detailPage/ActorTile.dart';
 
@@ -96,12 +96,12 @@ class FilmDetailPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                _film.title,
-                style: TextStyle(
-                    fontSize: SizeConfig.blockSizeVertical * 3.57,
-                    fontFamily: "nova semibold",
-                    color: MyColor.shopTileTxt),
-              ),
+                 _film.title,
+                 style: TextStyle(
+                     fontSize: SizeConfig.blockSizeVertical * 3.57,
+                     fontFamily: "nova semibold",
+                     color: MyColor.shopTileTxt),
+               ),
               SizedBox(
                 height: SizeConfig.blockSizeVertical * 1.1,
               ),

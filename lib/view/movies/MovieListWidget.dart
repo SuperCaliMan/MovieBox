@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:moviebox/SizeConfig.dart';
-import 'package:moviebox/model/Film.dart';
-import 'package:moviebox/model/FilmsList.dart';
+import 'package:moviebox/model/Movie.dart';
+import 'package:moviebox/model/MockMovie.dart';
 import 'package:moviebox/tap.dart';
 import 'package:moviebox/view/movies/MovieTile.dart';
 
