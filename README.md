@@ -19,4 +19,8 @@ This ui and ux provide a mock app to discover upcoming events near you and get p
 </a>
 </p>
 
+Da fare
+- cambiare link readme
+- fixare title detail
+
 UI Designer [credits](https://figmaelements.com/movie-app/)
