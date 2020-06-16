@@ -92,64 +92,70 @@ class FilmDetailPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                 _film.title,
-                 style: TextStyle(
-                     fontSize: SizeConfig.blockSizeVertical * 3.57,
-                     fontFamily: "nova semibold",
-                     color: MyColor.shopTileTxt),
-               ),
-              SizedBox(
-                height: SizeConfig.blockSizeVertical * 1.1,
-              ),
-              Row(
-                children: <Widget>[
-                  Text(
-                    _film.year.toString(),
-                    style: TextStyle(
-                        color: MyColor.txtBarDetailSecondRow,
-                        fontFamily: "nova regular",
-                        fontSize: SizeConfig.blockSizeVertical * 2),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: SizeConfig.blockSizeHorizontal * 5.79,
-                        right: SizeConfig.blockSizeHorizontal * 5.79),
-                    child: Text(
-                      _film.parentalGuidance,
+          Expanded(
+            flex: 1,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+               Text(
+                   _film.title,
+                   style: TextStyle(
+                       fontSize: SizeConfig.blockSizeVertical * 3.57,
+                       fontFamily: "nova semibold",
+                       color: MyColor.shopTileTxt),
+                 ),
+                SizedBox(
+                  height: SizeConfig.blockSizeVertical * 1.1,
+                ),
+                Row(
+                  children: <Widget>[
+                    Text(
+                      _film.year.toString(),
                       style: TextStyle(
                           color: MyColor.txtBarDetailSecondRow,
                           fontFamily: "nova regular",
                           fontSize: SizeConfig.blockSizeVertical * 2),
                     ),
-                  ),
-                  Text(
-                    _film.timeDuration.inSeconds.toString(),
-                    style: TextStyle(
-                        color: MyColor.txtBarDetailSecondRow,
-                        fontFamily: "nova regular",
-                        fontSize: SizeConfig.blockSizeVertical * 2),
-                  ),
-                ],
-              )
-            ],
-          ),
-          InkWell(
-            child: Container(
-              width: SizeConfig.blockSizeHorizontal * 15.45,
-              height: SizeConfig.blockSizeVertical * 7.14,
-              child: Icon(
-                Icons.add,
-                color: Colors.white,
-              ),
-              decoration: BoxDecoration(
-                  color: Colors.pinkAccent,
-                  borderRadius: BorderRadius.circular(20)),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: SizeConfig.blockSizeHorizontal * 5.79,
+                          right: SizeConfig.blockSizeHorizontal * 5.79),
+                      child: Text(
+                        _film.parentalGuidance,
+                        style: TextStyle(
+                            color: MyColor.txtBarDetailSecondRow,
+                            fontFamily: "nova regular",
+                            fontSize: SizeConfig.blockSizeVertical * 2),
+                      ),
+                    ),
+                    Text(
+                      _film.timeDuration.inSeconds.toString(),
+                      style: TextStyle(
+                          color: MyColor.txtBarDetailSecondRow,
+                          fontFamily: "nova regular",
+                          fontSize: SizeConfig.blockSizeVertical * 2),
+                    ),
+                  ],
+                )
+              ],
             ),
-            onTap: () => print("tap"),
+          ),
+          Expanded(
+            flex: 0,
+            child: InkWell(
+              child: Container(
+                width: SizeConfig.blockSizeHorizontal * 15.45,
+                height: SizeConfig.blockSizeVertical * 7.14,
+                child: Icon(
+                  Icons.add,
+                  color: Colors.white,
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.pinkAccent,
+                    borderRadius: BorderRadius.circular(20)),
+              ),
+              onTap: () => print("tap"),
+            ),
           )
         ],
       ),
