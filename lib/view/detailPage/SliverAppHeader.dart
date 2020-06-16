@@ -129,9 +129,9 @@ class SliverAppHeader extends SliverPersistentHeaderDelegate {
           boxShadow: [
             BoxShadow(
                 color: MyColor.blur,
-                blurRadius: 100.0,
-                spreadRadius: 10.0,
-                offset: Offset(-20.0, 10.0))
+                blurRadius: 80.0,
+                spreadRadius: 5.0,
+                offset: Offset(-15.0, 10.0))
           ]),
       child: _getElementInside(),
     );
